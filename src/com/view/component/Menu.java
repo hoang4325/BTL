@@ -1,6 +1,7 @@
 
 package com.view.component;
 
+import com.event.EventMenuSelected;
 import com.model.ModelMenu;
 import java.awt.Color;
 import java.awt.GradientPaint;
@@ -14,6 +15,13 @@ import javax.swing.JFrame;
 
 public class Menu extends javax.swing.JPanel {
 
+    private EventMenuSelected event;
+    
+    public void addEventMenuSelected(EventMenuSelected event){
+        this.event = event;
+        listMenu1.addEventMenuSelected(event);
+    }
+    
     public Menu() {
         initComponents();
         setOpaque(false);
@@ -26,7 +34,6 @@ public class Menu extends javax.swing.JPanel {
         listMenu1.addItem(new ModelMenu("2", "Bán hàng", ModelMenu.MenuType.MENU));
         listMenu1.addItem(new ModelMenu("3", "Hoá đơn", ModelMenu.MenuType.MENU));
         listMenu1.addItem(new ModelMenu("4", "Sản phẩm", ModelMenu.MenuType.MENU));
-        listMenu1.addItem(new ModelMenu("5", "Thống kê", ModelMenu.MenuType.MENU));
         listMenu1.addItem(new ModelMenu("6", "Nhân viên", ModelMenu.MenuType.MENU));
     }
 
